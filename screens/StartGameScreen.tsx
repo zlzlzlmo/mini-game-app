@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOpacity: 0.25,
     marginHorizontal: 20,
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "center",
   },
   numberInput: {

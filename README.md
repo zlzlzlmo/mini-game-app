@@ -15,5 +15,11 @@
     - [styles.buttonInnerContainer,styles.pressed]과 같은 형태로 배열을 사용하여 여러 스타일 프로퍼티 값들을 넣어 스타일링이 가능하다.
 
 - align-items의 기본값은 stretch이기때문에 기본적으로 쭉 늘어난다.
+
   - 내부 플렉스 아이템들이 원하는 크기대로 움직이려면 <View/> 로 감싸서 캡슐화를 해주고 해주면 컨트롤이 편리하다.
   - flex 속성을 이용해서 원하는 사이즈가 나올 수 있도록 상황에 맞게 스타일링한다.
+
+- ImageBackground API를 사용하여 web에서의 background-image와 같은 UI를 만들 수 있다.
+  - source 속성안에 uri 프로퍼티를 넣어 cdn을 넣을 수 도있고, require를 사용하여 import한것을 넣을 수도 있다.
+  - imageStyle 프로퍼티에서 따로 스타일링을하여 image만 스타일링을 줄 수 가 있다.
+  - 예를들어 opacity 0.75를 만든 객체를 imageStyle 에 넣어주면 rgba(?,?,?,0.75)와 같은 효과를 낸다.
