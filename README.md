@@ -11,3 +11,4 @@
   - android-ripple 속성으로 클릭했을때 효과도 줄 수 있다 (하지만 이것은 안드로이드만 가능)
   - android-ripple에서 의도한대로 파급효과를 주기 위해선 View 컴포넌트 안에 Pressable을 넣고 그 안에 속성값을 줘야한다. 즉 View -> Pressable -> Text
   - style 속성안에 pressed 프로퍼티가 내부적으로 들어오는데 이 boolean값으로 눌렀을때의 스타일링을 할 수 있다.
+    - [styles.buttonInnerContainer,styles.pressed]과 같은 형태로 배열을 사용하여 여러 스타일 프로퍼티 값들을 넣어 스타일링이 가능하다.
