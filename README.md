@@ -7,8 +7,13 @@
 - TextInput API에서 keyboardType 으로 숫자만 입력 가능하게 할것인지 등 설정 할 수 있다. (number-pad 이면 숫자만, 그 외 여러가지 속성값들이 있다), 추가적으로 autoCorrect 및 autoCapitalize 등 자동으로 무언가 변할때 사용되는 속성을 컨트롤 하여서 사용자 경험을 저해시키는 요소들을 제거 할 수도 있다.
 
 - 클릭이 가능한 컨테이너를 만들때 Pressable API를 이용할 수 있다.
+
   - TouchableOpactiy라는 것도 있지만, Pressable은 onPressIn, Out, LongPress등 다양한 상황에 대해 이벤트를 줄 수 있따.
   - android-ripple 속성으로 클릭했을때 효과도 줄 수 있다 (하지만 이것은 안드로이드만 가능)
   - android-ripple에서 의도한대로 파급효과를 주기 위해선 View 컴포넌트 안에 Pressable을 넣고 그 안에 속성값을 줘야한다. 즉 View -> Pressable -> Text
   - style 속성안에 pressed 프로퍼티가 내부적으로 들어오는데 이 boolean값으로 눌렀을때의 스타일링을 할 수 있다.
     - [styles.buttonInnerContainer,styles.pressed]과 같은 형태로 배열을 사용하여 여러 스타일 프로퍼티 값들을 넣어 스타일링이 가능하다.
+
+- align-items의 기본값은 stretch이기때문에 기본적으로 쭉 늘어난다.
+  - 내부 플렉스 아이템들이 원하는 크기대로 움직이려면 <View/> 로 감싸서 캡슐화를 해주고 해주면 컨트롤이 편리하다.
+  - flex 속성을 이용해서 원하는 사이즈가 나올 수 있도록 상황에 맞게 스타일링한다.
