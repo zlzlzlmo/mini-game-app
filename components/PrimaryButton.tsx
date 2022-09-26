@@ -1,12 +1,18 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  GestureResponderEvent,
+} from "react-native";
 import React from "react";
 
 interface Props {
   children: React.ReactNode;
+  onPress: (event: GestureResponderEvent) => void;
 }
 
-const PrimaryButton: React.FC<Props> = ({ children }) => {
-  const onClick = () => console.log("clicked");
+const PrimaryButton: React.FC<Props> = ({ children, onPress }) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
@@ -15,7 +21,7 @@ const PrimaryButton: React.FC<Props> = ({ children }) => {
             ? [styles.buttonInnerContainer, styles.pressed]
             : styles.buttonInnerContainer
         }
-        onPress={onClick}
+        onPress={onPress}
         android_ripple={{ color: "#c52a78" }}
       >
         <Text style={styles.buttonText}>{children}</Text>
