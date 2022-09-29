@@ -20,6 +20,11 @@
   - flex 속성을 이용해서 원하는 사이즈가 나올 수 있도록 상황에 맞게 스타일링한다.
 
 - ImageBackground API를 사용하여 web에서의 background-image와 같은 UI를 만들 수 있다.
+
   - source 속성안에 uri 프로퍼티를 넣어 cdn을 넣을 수 도있고, require를 사용하여 import한것을 넣을 수도 있다.
   - imageStyle 프로퍼티에서 따로 스타일링을하여 image만 스타일링을 줄 수 가 있다.
   - 예를들어 opacity 0.75를 만든 객체를 imageStyle 에 넣어주면 rgba(?,?,?,0.75)와 같은 효과를 낸다.
+
+- Alert Api를 통하여 어플리케이션 내 alert를 표현할 수 있는데, title, message를 설정 할 수 있으며, 옵션으로 [
+  { text: "확인", style: "destructive", onPress: handleResetInput },
+  ] 와 같은 형태로 버튼 텍스트, 스타일, 눌렀을때 이벤트를 설정 할 수 있다.
