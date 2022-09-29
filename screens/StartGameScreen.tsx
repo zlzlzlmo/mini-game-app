@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import PrimaryButton from "../components/PrimaryButton";
 
@@ -6,8 +6,16 @@ const StartGameScreen = () => {
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
   const handleNumberInput = (text: string) => setEnteredNumber(text);
-  const handleConfirmInput = () => {};
   const handleResetInput = () => setEnteredNumber("");
+  const handleConfirmInput = () => {
+    const chosenNumber = parseInt(enteredNumber, 10);
+    if (Number.isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+      Alert.alert("alert", "잘못된 숫자 타입입니다.", [
+        { text: "확인", style: "destructive", onPress: handleResetInput },
+      ]);
+      return;
+    }
+  };
 
   return (
     <View style={styles.inputContainer}>
