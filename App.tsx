@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
+import GameScreen from "./screens/GameScreen";
 import StartGameScreen from "./screens/StartGameScreen";
 
 export default function App() {
+  const [userNumber, setUserNumber] = useState<number | null>(null);
+
+  const handleUserNumber = (number: number) => setUserNumber(number);
+
   return (
     <View style={styles.rootContainer}>
       <ImageBackground
@@ -12,7 +18,11 @@ export default function App() {
         resizeMode="cover"
         imageStyle={styles.backgroundImage}
       >
-        <StartGameScreen />
+        {!userNumber ? (
+          <StartGameScreen handleUserNumber={handleUserNumber} />
+        ) : (
+          <GameScreen />
+        )}
       </ImageBackground>
     </View>
   );
