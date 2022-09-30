@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import PrimaryButton from "../components/PrimaryButton";
 
@@ -25,6 +25,15 @@ const GameScreen = ({ userNumber }: GameScreenProps) => {
   );
 
   const handleNextGuess = (direction: "lower" | "higher") => {
+    if (
+      (direction === "lower" && currentGuess < userNumber) ||
+      (direction === "higher" && currentGuess > userNumber)
+    ) {
+      Alert.alert("Don`t lie!", "정상적인 Guess를 하세요", [
+        { text: "OK", style: "cancel" },
+      ]);
+      return;
+    }
     if (direction === "lower") {
       setCurrentGuess(
         generateRandomBetween(minBoundary, currentGuess, currentGuess)
