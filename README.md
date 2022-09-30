@@ -30,3 +30,5 @@
   ] 와 같은 형태로 버튼 텍스트, 스타일, 눌렀을때 이벤트를 설정 할 수 있다.
 
 - SafeAreaView API로 아이폰에서 상단 노치바 만큼 공간을 준 컨테이너를 적용시킬 수 있다. (아직은 IOS만 된다. )
+
+- Math.floor(Math.random() \* (max - min)) + min 와 같이 min max 의 random값을 뽑아낼 수 있다.
