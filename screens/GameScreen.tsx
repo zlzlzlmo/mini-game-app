@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
+import PrimaryButton from "../components/PrimaryButton";
 
 const generateRandomBetween = (
   min: number,
@@ -11,14 +12,30 @@ const generateRandomBetween = (
   return rndNum;
 };
 
+const minBoundary = 1;
+const maxBoundary = 100;
+
 interface GameScreenProps {
   userNumber: number;
 }
 
 const GameScreen = ({ userNumber }: GameScreenProps) => {
   const [currentGuess, setCurrentGuess] = useState<number>(
-    generateRandomBetween(1, 100, userNumber)
+    generateRandomBetween(minBoundary, maxBoundary, userNumber)
   );
+
+  const handleNextGuess = (direction: "lower" | "higher") => {
+    if (direction === "lower") {
+      setCurrentGuess(
+        generateRandomBetween(minBoundary, currentGuess, currentGuess)
+      );
+      return;
+    }
+
+    setCurrentGuess(
+      generateRandomBetween(currentGuess + 1, maxBoundary, currentGuess)
+    );
+  };
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Opponent's Guess</Text>
@@ -27,6 +44,14 @@ const GameScreen = ({ userNumber }: GameScreenProps) => {
       </View>
       <View>
         <Text>Higher or Lower?</Text>
+        <View>
+          <PrimaryButton onPress={handleNextGuess.bind(this, "higher")}>
+            +
+          </PrimaryButton>
+          <PrimaryButton onPress={handleNextGuess.bind(this, "lower")}>
+            -
+          </PrimaryButton>
+        </View>
       </View>
       <View>
         <Text>LOG ROUNDS</Text>
