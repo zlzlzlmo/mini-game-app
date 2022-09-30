@@ -32,3 +32,5 @@
 - SafeAreaView API로 아이폰에서 상단 노치바 만큼 공간을 준 컨테이너를 적용시킬 수 있다. (아직은 IOS만 된다. )
 
 - Math.floor(Math.random() \* (max - min)) + min 와 같이 min max 의 random값을 뽑아낼 수 있다.
+
+- `<FlatList data={guessRounds} renderItem={(itemData)=><Text>{itemData.item}</Text>} keyExtractor={(item)=>item}/> ` 이런식으로 FlatList를 사용하여 lazy loading이 적용된 리스트 렌더링을 할 수 있따
