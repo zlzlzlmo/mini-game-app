@@ -28,3 +28,5 @@
 - Alert Api를 통하여 어플리케이션 내 alert를 표현할 수 있는데, title, message를 설정 할 수 있으며, 옵션으로 [
   { text: "확인", style: "destructive", onPress: handleResetInput },
   ] 와 같은 형태로 버튼 텍스트, 스타일, 눌렀을때 이벤트를 설정 할 수 있다.
+
+- SafeAreaView API로 아이폰에서 상단 노치바 만큼 공간을 준 컨테이너를 적용시킬 수 있다. (아직은 IOS만 된다. )
