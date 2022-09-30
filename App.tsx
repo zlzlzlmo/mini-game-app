@@ -21,7 +21,7 @@ export default function App() {
         {!userNumber ? (
           <StartGameScreen handleUserNumber={handleUserNumber} />
         ) : (
-          <GameScreen />
+          <GameScreen userNumber={userNumber} />
         )}
       </ImageBackground>
     </SafeAreaView>
