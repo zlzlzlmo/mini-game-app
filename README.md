@@ -36,3 +36,10 @@
 - `<FlatList data={guessRounds} renderItem={(itemData)=><Text>{itemData.item}</Text>} keyExtractor={(item)=>item}/> ` 이런식으로 FlatList를 사용하여 lazy loading이 적용된 리스트 렌더링을 할 수 있따
 
 - `maxWidth:'80%'; width:300` 과 같이 스타일링을 하면 동적으로 width을 줄 수 있다.
+
+- Dimensions API를 사용하여 화면에 대한 크기를 구할 수 있다
+  - `const windowWidth = Dimensions.get('window').width; const windowHeight = Dimensions.get('window').height;`
+  - 폴더블 폰같이 지속적으로 스크린이 변화할때 동적으로 업데이트를 시킬 수 있다.
+  - `Dimensions.addEventListener("change",callback)`을 사용하여 화면 change시 window와 screen 프로퍼티 값을 받아 올 수 있다.
+  - screen은 사용가능한 전체 스크린이고(status bar 포함), window는 status bar가 제외한것이다.
+  - `padding: windowWidth < 380 ? 12 : 24`;
