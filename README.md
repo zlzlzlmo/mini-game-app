@@ -34,3 +34,5 @@
 - Math.floor(Math.random() \* (max - min)) + min 와 같이 min max 의 random값을 뽑아낼 수 있다.
 
 - `<FlatList data={guessRounds} renderItem={(itemData)=><Text>{itemData.item}</Text>} keyExtractor={(item)=>item}/> ` 이런식으로 FlatList를 사용하여 lazy loading이 적용된 리스트 렌더링을 할 수 있따
+
+- `maxWidth:'80%'; width:300` 과 같이 스타일링을 하면 동적으로 width을 줄 수 있다.
