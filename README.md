@@ -38,8 +38,16 @@
 - `maxWidth:'80%'; width:300` 과 같이 스타일링을 하면 동적으로 width을 줄 수 있다.
 
 - Dimensions API를 사용하여 화면에 대한 크기를 구할 수 있다
+
   - `const windowWidth = Dimensions.get('window').width; const windowHeight = Dimensions.get('window').height;`
   - 폴더블 폰같이 지속적으로 스크린이 변화할때 동적으로 업데이트를 시킬 수 있다.
   - `Dimensions.addEventListener("change",callback)`을 사용하여 화면 change시 window와 screen 프로퍼티 값을 받아 올 수 있다.
   - screen은 사용가능한 전체 스크린이고(status bar 포함), window는 status bar가 제외한것이다.
   - `padding: windowWidth < 380 ? 12 : 24`;
+  - 혹은 useWindowDimensions 훅으로 change이벤트를 내부적으로 실행시켜 width height를 계속 업데이트 할 수도있다.
+
+- app.json 내 orientation 프로퍼티가 있는데 기본값은 portrait이며, 화면이 로테이트 될때 lock이 걸려서 움직이질 않는다. 움직이길 원하면 default로 value를 변경한다.
+
+- KeyboardAvoidingView API를 사용하여 키보드 키패드가 나타났을때 키보드가 UI를 덮는것을 방지할수 있다.
+  - behavior='position'같은 속성값을 준다.
+  - ScrollView를 사용하여 KeyboardAvoidingView를 감싸서 키보드가 올라가면서 컴포넌트가 올라갔을때 스크롤을 이용하여 전체적으로 볼 수 있다.
