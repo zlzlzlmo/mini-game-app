@@ -49,5 +49,11 @@
 - app.json 내 orientation 프로퍼티가 있는데 기본값은 portrait이며, 화면이 로테이트 될때 lock이 걸려서 움직이질 않는다. 움직이길 원하면 default로 value를 변경한다.
 
 - KeyboardAvoidingView API를 사용하여 키보드 키패드가 나타났을때 키보드가 UI를 덮는것을 방지할수 있다.
+
   - behavior='position'같은 속성값을 준다.
   - ScrollView를 사용하여 KeyboardAvoidingView를 감싸서 키보드가 올라가면서 컴포넌트가 올라갔을때 스크롤을 이용하여 전체적으로 볼 수 있다.
+
+- Platform API를 사용하여 사용자 os에 따른 기능을 줄 수 있다.
+  - `borderWidth : Platform.OS === 'android' ? 2 : 0`
+  - `borderWidth : Platform.select({android:2 , ios:0})`
+  - Title.android.js or Title.ios.js 이런식으로ㅓ 파일명을 지정하면, 내부적으로 컴파일될때 알아서 그 플랫폼에 맞는 컴포넌트를 렌더링시켜준다. 때문에 import 경로는 /Title 이렇게만 import를 한다. (일반 js 파일도 다 가능하다. )
